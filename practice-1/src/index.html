@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="практическое" />
+    <meta name="author" content="Анна Пантелеева" />
+    <title>Практическое задание 1</title>
+  </head>
+  <body class="root">
+    <div class="page">
+      <header class="header"></header>
+      <main class="main">
+        <section class="card">
+          <button class="card__button" name="button">
+            Открыть модульное окно
+          </button>
+        </section>
+      </main>
+      <footer class="footer"></footer>
+
+      <div class="popup">
+        <form
+          name="popup-edit"
+          id="popup-edit"
+          class="popup__container popup__container_edit"
+          novalidate
+        >
+          <button type="button" class="popup__close"></button>
+          <div class="popup__wrapper">
+            <h2 class="popup__definition">Редактировать профиль</h2>
+            <input
+              id="name-input"
+              type="text"
+              name="name"
+              class="popup__text popup__text_value_name"
+              placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="popup__text-error name-input-error"></span>
+            <input
+              id="job-input"
+              type="text"
+              name="job"
+              class="popup__text popup__text_value_job"
+              placeholder="Род деятельности"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="popup__text-error job-input-error"></span>
+            <button type="submit" class="popup__submit">Сохранить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
