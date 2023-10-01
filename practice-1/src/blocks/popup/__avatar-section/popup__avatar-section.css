@@ -1,0 +1,6 @@
+.popup__avatar-section {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px repeat(3, 48px);
+  gap: 16px;
+}
