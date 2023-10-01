@@ -1,0 +1,22 @@
+.popup__avatar-label {
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  background-image: url("../../../images/avatar-icon.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__avatar-label {
+    gap: 7px;
+  }
+}
