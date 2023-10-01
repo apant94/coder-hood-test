@@ -1,16 +1,7 @@
 .popup__input_value_avatar {
-  height:100px;
-  width: 100px;
+  position: absolute;
+  height: 0;
+  width: 0;
   padding: 0;
   border: none;
-  align-items: center;
-  justify-self: center;
-}
-
-@media screen and (min-width: 768px) {
-  .popup__input_value_avatart {
-    height: 163px;
-    width: 163px;
-    padding: 0;
-  }
 }

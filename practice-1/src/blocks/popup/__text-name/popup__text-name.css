@@ -1,0 +1,19 @@
+.popup__text-name {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.popup__text-name::before {
+  content: "*";
+  color: #d90000;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  line-height: .5;
+}
