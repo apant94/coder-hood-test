@@ -27,11 +27,12 @@
             name="popup-register"
             id="popup-register"
             class="popup__container popup__container_register"
-            novalidate
           >
             <div class="popup__avatar-section">
               <label class="popup__avatar-label">
-                <span class="popup__text-name popup__text-name_section_avatar">Логотип (jpeg, png)</span>
+                <span class="popup__text-name popup__text-name_section_avatar"
+                  >Логотип (jpeg, png)</span
+                >
                 <input
                   id="avatar-input"
                   type="file"
@@ -86,7 +87,7 @@
                 <span class="popup__text-name">Телефон</span>
                 <input
                   id="phone-input"
-                  type="text"
+                  type="tel"
                   name="phone"
                   class="popup__input"
                   placeholder="+7 (___) ___-__-__"
@@ -99,7 +100,7 @@
                 <span class="popup__text-name">E-mail</span>
                 <input
                   id="email-input"
-                  type="text"
+                  type="email"
                   name="email"
                   class="popup__input"
                   placeholder="avc@gmail.com"
@@ -109,76 +110,85 @@
                 />
               </label>
             </div>
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <input
-              id="job-input"
-              type="text"
-              name="job"
-              class="popup__text popup__text_value_job"
-              placeholder="Род деятельности"
-              minlength="2"
-              maxlength="200"
-              required
-            />
+            <label class="popup__text-label">
+              <span class="popup__text-name">Направление</span>
+              <select
+                class="popup__select"
+                id="object-input"
+                type="select"
+                name="object"
+                placeholder="Направление"
+                required
+              >
+                <option value="" disabled selected>Выберите направление</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+              </select>
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="avc.ru"
+              />
+              <img class="popup__icon" src="<%= require('./images/site.svg') %>" alt="Иконка сайта">
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="vk.com/shans"
+              />
+              <img class="popup__icon" src="<%= require('./images/vk.svg') %>" alt="Иконка ВКонтакте">
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="ok.com/shans"
+              />
+              <img class="popup__icon" src="<%= require('./images/odnoklassniki.svg') %>" alt="Иконка Одноклассники">
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="facebook.com/shans"
+              />
+              <img class="popup__icon" src="<%= require('./images/fb.svg') %>" alt="Иконка FB">
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="instagram.com/shans"
+              />
+              <img class="popup__icon" src="<%= require('./images/insta.svg') %>" alt="Иконка Insta">
+            </label>
+            <label class="popup__icon-label">
+              <input
+                id="site-input"
+                type="text"
+                name="site"
+                class="popup__input-link"
+                placeholder="youtube.com/shans"
+              />
+              <img class="popup__icon" src="<%= require('./images/youtube.svg') %>" alt="Иконка YouTube">
+            </label>
             <button type="submit" class="popup__submit">Сохранить</button>
           </form>
           <button class="popup__close-btn"></button>
