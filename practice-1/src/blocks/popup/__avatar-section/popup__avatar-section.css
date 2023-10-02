@@ -1,6 +1,17 @@
 .popup__avatar-section {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 100px repeat(3, 48px);
+  grid-template-rows: 120px repeat(3, 48px);
   gap: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__avatar-section {
+    grid-template-columns: 65% auto;
+    grid-template-rows: repeat(3, 56px);
+    gap: 32px;
+    grid-template-areas: 'name avatar'
+    'phone avatar'
+    'email avatar'
+  }
 }

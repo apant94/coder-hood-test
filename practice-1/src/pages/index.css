@@ -12,7 +12,11 @@
 @import url(../blocks/popup/__avatar-section/popup__avatar-section.css);
 @import url(../blocks/popup/__avatar-label/popup__avatar-label.css);
 @import url(../blocks/popup/__text-label/popup__text-label.css);
+@import url(../blocks/popup/__text-label/_value/popup__text-label_value_name.css);
+@import url(../blocks/popup/__text-label/_value/popup__text-label_value_phone.css);
+@import url(../blocks/popup/__text-label/_value/popup__text-label_value_email.css);
 @import url(../blocks/popup/__text-name/popup__text-name.css);
+@import url(../blocks/popup/__text-name/_section/popup__text-name_section_avatar.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_value/popup__input_value_avatar.css);
 @import url(../blocks/popup/__avatar-delete/popup__avatar-delete.css);

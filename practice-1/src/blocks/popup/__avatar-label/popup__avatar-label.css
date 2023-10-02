@@ -4,6 +4,7 @@
   width: 100px;
   position: relative;
   justify-self: flex-end;
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,12 +12,19 @@
   gap: 3px;
   background-image: url("../../../images/avatar-icon.jpeg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-radius: 50%;
+  background-position: center;
+
 }
 
 @media screen and (min-width: 768px) {
   .popup__avatar-label {
     gap: 7px;
+    grid-area: avatar;
+    width: 100%;
+    align-self: center;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
