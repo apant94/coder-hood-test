@@ -1,10 +1,13 @@
 const table = document.querySelector('.table__list');
+const search = document.querySelector('.table__search')
+let dataposts = [];
 
 function fetchData() {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => response.json())
     .then((data) => {
-      renderPosts(data);
+      dataposts = data;
+      renderPosts(dataposts);
     })
     .catch((error) => console.error(error));
 };
@@ -30,13 +33,23 @@ function generatePost(el) {
 
 // функция рендеринга постов в списке
 const renderPosts = (posts) => {
-  console.log(posts);
+  table.innerHTML = '';
   posts.forEach((item) => {
     table.append(generatePost(item));
   });
-  // recalculateComments();
-  // reorderComments();
 };
+
+search.addEventListener('input', (e) => {
+  const value = e.target.value.replace(/\s/g, '').toLowerCase();
+  const filteredPosts = dataposts.filter((post) => {
+    return post.title.replace(/\s/g, '').toLowerCase().includes(value) || post.body.replace(/\s/g, '').toLowerCase().includes(value);
+  })
+  if (value.length >= 3) {
+    renderPosts(filteredPosts);
+  } else {
+    renderPosts(dataposts);
+  }
+})
 
 fetchData();
 
