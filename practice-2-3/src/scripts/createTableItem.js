@@ -1,16 +1,21 @@
-const table = document.querySelector('.table__list');
-const search = document.querySelector('.table__search')
-let dataposts = [];
+const table = document.querySelector(".table__list");
+const search = document.querySelector(".table__search");
+const headers = document
+  .querySelector(".table__headers")
+  .querySelectorAll("li");
+
+let dataPosts = [];
+let renderedPosts = [];
 
 function fetchData() {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((response) => response.json())
     .then((data) => {
-      dataposts = data;
-      renderPosts(dataposts);
+      dataPosts = data;
+      renderPosts(dataPosts);
     })
     .catch((error) => console.error(error));
-};
+}
 
 // функция получения образа поста
 function getTemplate() {
@@ -20,7 +25,6 @@ function getTemplate() {
     .cloneNode(true);
   return template;
 }
-
 
 // функция заполнения данных в посте
 function generatePost(el) {
@@ -33,23 +37,51 @@ function generatePost(el) {
 
 // функция рендеринга постов в списке
 const renderPosts = (posts) => {
-  table.innerHTML = '';
+  table.innerHTML = "";
+  renderedPosts = posts;
   posts.forEach((item) => {
     table.append(generatePost(item));
   });
 };
 
-search.addEventListener('input', (e) => {
-  const value = e.target.value.replace(/\s/g, '').toLowerCase();
-  const filteredPosts = dataposts.filter((post) => {
-    return post.title.replace(/\s/g, '').toLowerCase().includes(value) || post.body.replace(/\s/g, '').toLowerCase().includes(value);
-  })
+search.addEventListener("input", (e) => {
+  const value = e.target.value.replace(/\s/g, "").toLowerCase();
+  const filteredPosts = dataPosts.filter((post) => {
+    return (
+      post.title.replace(/\s/g, "").toLowerCase().includes(value) ||
+      post.body.replace(/\s/g, "").toLowerCase().includes(value)
+    );
+  });
   if (value.length >= 3) {
     renderPosts(filteredPosts);
   } else {
-    renderPosts(dataposts);
+    renderPosts(dataPosts);
   }
-})
+});
+
+headers.forEach((header) => {
+  header.addEventListener("click", () => {
+    const name = header.getAttribute("data-name");
+    const order = header.getAttribute("data-order");
+    header.setAttribute(
+      "data-order",
+      order === "increasing" ? "decreasing" : "increasing"
+    );
+    sortData(name, order);
+  });
+});
+
+function sortData(keyData, order) {
+  console.log(renderedPosts);
+  const key = keyData; // ключ, по которому будем сортировать
+  const sorted = renderedPosts.sort((user1, user2) => {
+    if (order === "increasing") {
+      return user1[key] > user2[key] ? 1 : -1;
+    } else {
+      return user1[key] < user2[key] ? 1 : -1;
+    }
+  });
+  renderPosts(sorted);
+}
 
 fetchData();
-
