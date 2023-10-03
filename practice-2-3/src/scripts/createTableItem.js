@@ -4,8 +4,8 @@ const headers = document
   .querySelector(".table__headers")
   .querySelectorAll("li");
 
-let dataPosts = [];
-let renderedPosts = [];
+let dataPosts = []; // изначальные данные, прилетевшие с api
+let renderedPosts = []; // итоговые отрендеренные данные после поиска
 
 function fetchData() {
   fetch("https://jsonplaceholder.typicode.com/posts")
@@ -44,6 +44,7 @@ const renderPosts = (posts) => {
   });
 };
 
+// функция обработки изменений в инпуте поиска
 search.addEventListener("input", (e) => {
   const value = e.target.value.replace(/\s/g, "").toLowerCase();
   const filteredPosts = dataPosts.filter((post) => {
@@ -59,6 +60,7 @@ search.addEventListener("input", (e) => {
   }
 });
 
+// функция обработки клика на заголовки таблицы
 headers.forEach((header) => {
   header.addEventListener("click", () => {
     const name = header.getAttribute("data-name");
@@ -71,14 +73,14 @@ headers.forEach((header) => {
   });
 });
 
+// функция сортировки данных
 function sortData(keyData, order) {
-  console.log(renderedPosts);
   const key = keyData; // ключ, по которому будем сортировать
-  const sorted = renderedPosts.sort((user1, user2) => {
+  const sorted = renderedPosts.sort((post1, post2) => {
     if (order === "increasing") {
-      return user1[key] > user2[key] ? 1 : -1;
+      return post1[key] > post2[key] ? 1 : -1;
     } else {
-      return user1[key] < user2[key] ? 1 : -1;
+      return post1[key] < post2[key] ? 1 : -1;
     }
   });
   renderPosts(sorted);
