@@ -8,3 +8,10 @@
   cursor: pointer;
   height: 100%;
 }
+
+.popup__select::placeholder {
+  color: #d6dade;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
