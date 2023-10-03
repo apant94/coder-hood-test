@@ -9,9 +9,7 @@ function fetchData() {
     .catch((error) => console.error(error));
 };
 
-fetchData();
-
-// функция получения образа комментария
+// функция получения образа поста
 function getTemplate() {
   const template = document
     .querySelector(".table__template")
@@ -21,7 +19,7 @@ function getTemplate() {
 }
 
 
-// функция заполнения данных в новом комментарии
+// функция заполнения данных в посте
 function generatePost(el) {
   const post = getTemplate();
   post.querySelector(".table__id").textContent = el.id;
@@ -30,7 +28,7 @@ function generatePost(el) {
   return post;
 }
 
-// функция рендеринга новых комментариев в списке
+// функция рендеринга постов в списке
 const renderPosts = (posts) => {
   console.log(posts);
   posts.forEach((item) => {
@@ -39,4 +37,6 @@ const renderPosts = (posts) => {
   // recalculateComments();
   // reorderComments();
 };
+
+fetchData();
 
