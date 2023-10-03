@@ -23,7 +23,8 @@
 .popup__avatar-delete{cursor:pointer;height:20px;position:absolute;right:8px;top:0;width:20px;z-index:2}@media screen and (min-width:768px){.popup__avatar-delete{height:37px;width:37px}}
 .popup__avatar-icon{height:20px;width:20px}@media screen and (min-width:768px){.popup__avatar-icon{height:30px;width:30px}}
 .popup__avatar-text{color:#fff;font-size:15px;font-weight:400;line-height:1.5;margin:0;text-align:center;text-decoration-line:underline}@media screen and (min-width:768px){.popup__avatar-text{font-size:19px}}
-.popup__select{background-color:transparent;border:none;cursor:pointer;font-size:16px;font-weight:400;height:100%;line-height:1.5;width:100%}.popup__select::-moz-placeholder{color:#d6dade}.popup__select::placeholder{color:#d6dade}
+.popup__select{background-color:transparent;border:none;cursor:pointer;font-size:16px;font-weight:400;height:100%;line-height:1.5;width:100%}.popup__select::-moz-placeholder{color:#d6dade;font-size:16px;font-weight:400;line-height:1.5}.popup__select::placeholder{color:#d6dade;font-size:16px;font-weight:400;line-height:1.5}
+.popup__select-option:checked{color:#aaadaf;font-size:16px;font-weight:400;line-height:1.5}
 .popup__icon-label{border:1px solid #d6dade;display:flex;height:24px;justify-content:space-between;padding:13px 16px}@media screen and (min-width:768px){.popup__icon-label{padding:16px}}
 .popup__input-link{border:none;color:#0c1014;font-size:16px;font-weight:400;height:100%;line-height:1.5;width:90%}
 .popup__icon{align-self:center;height:18px;width:18px}
